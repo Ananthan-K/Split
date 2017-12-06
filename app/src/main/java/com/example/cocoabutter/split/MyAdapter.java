@@ -6,12 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 /**
  * Created by Ananthan on 2017-12-06.
  */
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
-    private String[] mDataset;
+    private List<Person> personList;
+//    private String[] mDataset;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mTextView;
@@ -22,8 +25,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         }
     }
 
-    public MyAdapter(String[] myDataset){
-        this.mDataset = myDataset;
+    public MyAdapter(List<Person> personList){
+//        this.mDataset = myDataset;
+        this.personList = personList;
     }
 
     @Override
@@ -36,11 +40,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position){
-        holder.mTextView.setText(mDataset[position]);
+        Person p = personList.get(position);
+        holder.mTextView.setText(p.firstName+ " " + p.lastName);
+//        holder.mTextView.setText(mDataset[position]);
     }
 
     @Override
     public int getItemCount(){
-        return mDataset.length;
+//        return mDataset.length;
+        return personList.size();
     }
 }
