@@ -19,7 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActiveTransactions"></activity>
+        <activity android:name=".ActiveTransactions" />
+        <activity
+            android:name=".AddNewPerson"
+            android:label="@string/title_activity_add_new_person"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
