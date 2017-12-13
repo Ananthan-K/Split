@@ -29,7 +29,7 @@ public class ActiveTransactions extends AppCompatActivity {
         List<Person> myDataset = new ArrayList<>();
         myDataset.add(new Person("Harry", "Potter"));
         myDataset.add(new Person("Ronald", "Weasley"));
-        myDataset.add(new Person("Harmione", "Granger"));
+        myDataset.add(new Person("Hermione", "Granger"));
         myDataset.add(new Person("Fred", "Weasley"));
         myDataset.add(new Person("George", "Weasley"));
         myDataset.add(new Person("Ginny", "Weasley"));

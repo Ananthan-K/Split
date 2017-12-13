@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">Split</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello World! Welcome to my app!</string>
-    <string name="second_page">Welcome to the second page</string>
+    <string name="hello_world">Welcome to $plit!</string>
+    <string name="second_page">Welcome to the second page!</string>
     <string name="title_activity_add_new_person">AddNewPerson</string>
     <string name="add_more">Add More</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
+    <string name="amount">Amount</string>
 </resources>
