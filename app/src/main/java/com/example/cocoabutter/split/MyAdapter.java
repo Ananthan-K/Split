@@ -14,21 +14,30 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     private List<Person> personList;
-//    private String[] mDataset;
+    private String[] mDataset;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView mTextView;
+        public final TextView nameTextView;
+        public final TextView amountTextView;
 
         public ViewHolder(View v){
             super(v);
-            //mTextView = (TextView) v.findViewById(R.id.name);
-            mTextView = (TextView) v.findViewById(R.id.name);
+            //nameTextView = (TextView) v.findViewById(R.id.name);
+            nameTextView = (TextView) v.findViewById(R.id.firstname);
+            amountTextView = (TextView) v.findViewById(R.id.amount);
+        }
+
+        public TextView getNameTextView(){
+            return nameTextView;
+        }
+        public TextView getAmountTextView(){
+            return amountTextView;
         }
     }
 
-    public MyAdapter(List<Person> personList){
-//        this.mDataset = myDataset;
-        this.personList = personList;
+    public MyAdapter(List<Person> persons){
+//        mDataset = persons;
+        personList = persons;
     }
 
     @Override
@@ -42,8 +51,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(ViewHolder holder, int position){
         Person p = personList.get(position);
-        holder.mTextView.setText(p.firstName+ " " + p.lastName);
-//        holder.mTextView.setText(mDataset[position]);
+        holder.nameTextView.setText(p.firstName + " " + p.lastName);
+        holder.amountTextView.setText("$" + p.amount);
+//        holder.nameTextView.setText(mDataset[position]);
+//        holder.getTextView().setText(mDataset[position]);
     }
 
     @Override

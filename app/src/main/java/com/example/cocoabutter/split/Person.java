@@ -1,5 +1,8 @@
 package com.example.cocoabutter.split;
 
+import java.math.BigDecimal;
+import java.util.Currency;
+
 /**
  * Created by Ananthan on 2017-12-06.
  */
@@ -7,9 +10,20 @@ package com.example.cocoabutter.split;
 public class Person {
     String firstName;
     String lastName;
+    BigDecimal amount;
+
+    public Person(String firstName, String lastName, BigDecimal amount){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.amount = amount;
+    }
 
     public Person(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public Person(String firstName){
+        this.firstName = firstName;
     }
 }

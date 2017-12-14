@@ -9,6 +9,7 @@ import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.math.BigDecimal;
 
 public class ActiveTransactions extends AppCompatActivity {
     private RecyclerView mRecyclerView;
@@ -27,16 +28,16 @@ public class ActiveTransactions extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         List<Person> myDataset = new ArrayList<>();
-        myDataset.add(new Person("Harry", "Potter"));
-        myDataset.add(new Person("Ronald", "Weasley"));
-        myDataset.add(new Person("Hermione", "Granger"));
-        myDataset.add(new Person("Fred", "Weasley"));
-        myDataset.add(new Person("George", "Weasley"));
-        myDataset.add(new Person("Ginny", "Weasley"));
-        myDataset.add(new Person("Molly", "Weasley"));
-        myDataset.add(new Person("Albus", "Dumbledore"));
+        myDataset.add(new Person("Harry", "Potter", new BigDecimal(5.0).setScale(2, BigDecimal.ROUND_CEILING)));
+        myDataset.add(new Person("Ronald", "Weasley", new BigDecimal(7.0).setScale(2, BigDecimal.ROUND_CEILING)));
+        myDataset.add(new Person("Hermione", "Granger", new BigDecimal(2.43).setScale(2, BigDecimal.ROUND_CEILING)));
+        myDataset.add(new Person("Fred", "Weasley", new BigDecimal(1.25).setScale(2, BigDecimal.ROUND_CEILING)));
+        myDataset.add(new Person("George", "Weasley", new BigDecimal(10.39).setScale(2, BigDecimal.ROUND_CEILING)));
+        myDataset.add(new Person("Ginny", "Weasley", new BigDecimal(502.3).setScale(2, BigDecimal.ROUND_CEILING)));
+        myDataset.add(new Person("Molly", "Weasley", new BigDecimal(3).setScale(2, BigDecimal.ROUND_CEILING)));
+        myDataset.add(new Person("Albus", "Dumbledore", new BigDecimal(34).setScale(2, BigDecimal.ROUND_CEILING)));
 
-//        {"Harry Potter","Ronald Weasley", "Hermione Granger"};
+//        String[] myDataset = {"Harry Potter","Ronald Weasley", "Hermione Granger"};
         mAdapter = new MyAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
     }
