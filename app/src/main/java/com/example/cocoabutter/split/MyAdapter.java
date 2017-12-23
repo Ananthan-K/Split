@@ -1,5 +1,6 @@
 package com.example.cocoabutter.split;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,6 +53,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     public void onBindViewHolder(ViewHolder holder, int position){
         Person p = personList.get(position);
         holder.nameTextView.setText(p.firstName + " " + p.lastName);
+        if(p.oweMe == true){
+            holder.amountTextView.setTextColor(Color.GREEN);
+        }
+        else{
+            holder.amountTextView.setTextColor(Color.RED);
+        }
         holder.amountTextView.setText("$" + p.amount);
 //        holder.nameTextView.setText(mDataset[position]);
 //        holder.getTextView().setText(mDataset[position]);

@@ -11,6 +11,14 @@ public class Person {
     String firstName;
     String lastName;
     BigDecimal amount;
+    boolean oweMe;
+
+    public Person(String firstName, String lastName, BigDecimal amount, boolean oweMe){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.amount = amount;
+        this.oweMe = oweMe;
+    }
 
     public Person(String firstName, String lastName, BigDecimal amount){
         this.firstName = firstName;
